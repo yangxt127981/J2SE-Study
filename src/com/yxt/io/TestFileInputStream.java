@@ -13,7 +13,7 @@ public class TestFileInputStream {
 		// TODO Auto-generated catch block
 		
 		e.printStackTrace();
-		System.out.println("找不到文件");
+		System.out.println("dfdf");
 		System.exit(-1);
 		
 	}
