@@ -13,10 +13,10 @@ public class TestObjectIO {
 	  T t = new T();
 	  t.age = 18;
 	  try {
-		FileOutputStream fos = new FileOutputStream("C://workspace//Java Study//src//com//yxt//io//testObject.txt");
+		FileOutputStream fos = new FileOutputStream("D://git//J2SE-Study//src//com//yxt//io//testObject.txt");
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		oos.writeObject(t);
-		FileInputStream fis = new FileInputStream("C://workspace//Java Study//src//com//yxt//io//testObject.txt");
+		FileInputStream fis = new FileInputStream("D://git//J2SE-Study//src//com//yxt//io//testObject.txt");
 
 		ObjectInputStream ois = new ObjectInputStream(fis);
 		T obj = (T)ois.readObject();
