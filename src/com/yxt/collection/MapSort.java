@@ -12,16 +12,14 @@ import java.util.Set;
 import java.util.TreeMap;
 
 public class MapSort  {
-	    public static void main(String[] args) {
-	    	//treemap 默认key升序排列
-	    	
-
-	       //MapSort.sortByKey();
-	       MapSort.sortByValue();
+   public static void main(String[] args) {
+	   //treemap 默认key升序排列
+	     MapSort.sortByKey();
+	     MapSort.sortByValue();
 	    }
-	    public static void sortByKey(){
+   public static void sortByKey(){
 	    	
-	    	 Map<String, String> map = new TreeMap<String, String>(
+	   Map<String, String> map = new TreeMap<String, String>(
 		        		//add comparator implement desc sort 
 		        		new Comparator<String>(){
 
@@ -38,6 +36,7 @@ public class MapSort  {
 		        map.put("4", "aaaaa");
 		        map.put("1", "bbbbb");
 		        map.put("2", "ddddd");
+		        System.out.println("-------map sort desc by key----");
 
 		        Set<String> keySet = map.keySet();
 		        Iterator<String> iter = keySet.iterator();
@@ -55,25 +54,27 @@ public class MapSort  {
 	    }
 	    
 	    
-	    public static void sortByValue(){
+	public static void sortByValue(){
 	    // sort by value
-	    	 Map<String, String> map = new TreeMap<String, String>(
+	     Map<String, String> map = new TreeMap<String, String>(
 		        		//add comparator implement desc sort 
-		        		new Comparator<String>(){
-
-							@Override
-							public int compare(String o1, String o2) {
-								// TODO Auto-generated method stub
-								return o2.compareTo(o1);
-							}
-		        			 
-		        		 }
+//		        		new Comparator<String>(){
+//
+//							@Override
+//							public int compare(String o1, String o2) {
+//								// TODO Auto-generated method stub
+//								return o2.compareTo(o1);
+//							}
+//		        			 
+//		        		 }
 		        		);
 		        
 		        map.put("3", "ccccc");
 		        map.put("4", "aaaaa");
 		        map.put("1", "bbbbb");
 		        map.put("2", "ddddd");
+		        System.out.println("-------map sort by value----");
+
 	    //这里将map.entrySet()转换成list
         List<Map.Entry<String,String>> list = new ArrayList<Map.Entry<String,String>>(map.entrySet());
         //然后通过比较器来实现排序
