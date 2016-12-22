@@ -10,7 +10,7 @@ public class TestBufferReader {
 		   BufferedReader br = null;
 		   FileReader fr =null;
 		try {
-			fr = new FileReader("C://workspace//Java Study//src//com//yxt//io//test.txt");
+			fr = new FileReader("d://git//J2SE-Study//src//com//yxt//io//test.txt");
 			br = new BufferedReader(fr);
 			String s = null;
 			while((s=br.readLine())!=null){

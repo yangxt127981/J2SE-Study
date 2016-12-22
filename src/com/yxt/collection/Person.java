@@ -31,8 +31,8 @@ public class Person implements Comparable{
 	  
 	  return false;
   }
-  
-  public int hashcode(){
+
+  public int hashCode(){
 	  return this.firstName.hashCode();
   }
   

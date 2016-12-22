@@ -10,7 +10,7 @@ public class TestBufferStream {
 	   FileInputStream fis = null;
 	   BufferedInputStream bis = null;
 	   try {
-		   fis = new FileInputStream("C://workspace//Java Study//src//com//yxt//io//TestFileInputStream.java");
+		   fis = new FileInputStream("d://git//J2SE-Study//src//com//yxt//io//TestFileInputStream.java");
 		   bis = new BufferedInputStream(fis);
 		   int b = 0;
 		   while((b=bis.read())!=-1){

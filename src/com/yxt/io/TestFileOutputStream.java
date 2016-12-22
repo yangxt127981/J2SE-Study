@@ -10,8 +10,8 @@ public class TestFileOutputStream {
 	   FileInputStream in = null;
 	   FileOutputStream out = null;
 	   try {
-			in = new FileInputStream("C://workspace//Java Study//src//com//yxt//io//TestFileInputStream.java");
-			out = new FileOutputStream("C://workspace//Java Study//src//com//yxt//io//test.java");
+			in = new FileInputStream("d://git//J2SE-Study//src//com//yxt//io//TestFileInputStream.java");
+			out = new FileOutputStream("d://git//J2SE-Study//src//com//yxt//io//test.txt");
 		    int b=0;
 			while((b=in.read())!=-1){
 		    	out.write(b);

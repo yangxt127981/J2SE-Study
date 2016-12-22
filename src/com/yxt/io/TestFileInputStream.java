@@ -8,7 +8,7 @@ public class TestFileInputStream {
   public static void main(String[] args){
 	  FileInputStream in = null;
 	  try {
-		 in = new FileInputStream("d://workspace//Java Study//src//com//yxt//io//TestFileInputStream.java");
+		 in = new FileInputStream("d://git//J2SE-Study//src//com//yxt//io//TestFileInputStream.java");
 	} catch (FileNotFoundException e) {
 		// TODO Auto-generated catch block
 		

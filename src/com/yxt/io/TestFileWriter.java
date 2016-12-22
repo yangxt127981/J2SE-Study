@@ -10,8 +10,8 @@ public class TestFileWriter {
 	   FileReader fr = null;
 
 	   try {
-			fr = new FileReader("C://workspace//Java Study//src//com//yxt//io//test.txt");
-			fw = new FileWriter("C://workspace//Java Study//src//com//yxt//io//test1.txt");
+			fr = new FileReader("d://git//J2SE-Study//src//com//yxt//io//test.txt");
+			fw = new FileWriter("d://git//J2SE-Study//src//com//yxt//io//test1.txt");
 			int b =0;
 			while((b=fr.read())!=-1){
 				fw.write(b);
