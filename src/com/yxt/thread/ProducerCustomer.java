@@ -34,21 +34,27 @@ class Bucket{
 	public Bucket(){
 		
 	}
-	
+
+	public int getStorageSize(){
+		return index;
+	}
+	// when execute sync method, get object lock ,another thread waiting in object lock  area
+  // after finish execute sync method,release object lock, another thread waiting in object lock pool area can get lock
 	public synchronized void push(Bread b){
 		if(index==breadArr.length){
 			try {
-				this.wait();  //current thread accessing the object wait, must lock object firstly
+				this.wait();  // release current object lock, current thread go into current object waiting area
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}  
 		}
-		this.notify();
+		this.notify(); // notify another thread which in current object lock waiting area to get object lock
 		breadArr[index] = b;
 		index++;
 	}
-	
+
+
 	public synchronized Bread pop(){
         if(index==0){
         	try {
@@ -58,7 +64,7 @@ class Bucket{
 				e.printStackTrace();
 			}
         }
-        this.notify(); // wake up a thread in current object
+        this.notify(); // notify another thread which in current object lock waiting area to get object lock
 		index--;
 		return breadArr[index]; 
 	}
@@ -78,8 +84,8 @@ class Producer implements Runnable{
 		   Bread b = new Bread(i);
 		   try {
 			bucket.push(b);
-			System.out.println("produce:"+b);
-			Thread.sleep(5000);
+			System.out.println("produce:"+b+","+"size:"+bucket.getStorageSize());
+			Thread.sleep(5);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -101,8 +107,8 @@ class Consumer implements Runnable{
 		   for(int i=0;i<20;i++){
 			   try {
 				Bread b = bucket.pop();
-				System.out.println("consume:"+b);
-                Thread.sleep(1);
+				System.out.println("consume:"+b+","+"size:"+bucket.getStorageSize());
+                Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
